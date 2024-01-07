@@ -6,7 +6,7 @@
     <title> قضايا الدولة | Egypt Litigation Authority</title>
     <meta name="description" content="قضايا الدولة هي هيئة قضائية مستقلة مصرية تتولى حماية المال العام ومصالح الدولة في الدعاوى المدنية والإدارية والدولية.">
     <meta name="keywords" content="هيئة,قضايا,الدولة,مصر,الحكومة وزارة,العدل">
-    <link href="images/favicon_io/favicon-16x16.png" rel="icon" type="image/x-icon">
+<link href="Images/favicon_io/favicon-16x16.png" rel="icon" type="image/x-icon">
     <meta name="author" content="Muhammad Yacoub">
     <meta name="robots" content="index, follow">
     <!-- openGraph & Twitter cards-->
@@ -27,6 +27,10 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 <body>
 
@@ -39,10 +43,7 @@
                 <br>
             </div>
             <div class="modal-header d-flex justify-content-center ">
-            <h5 class="modal-title" id="loginModalLabel">تسجيل الدخول</h5>
-            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button> -->
+                <h5 class="modal-title" id="loginModalLabel">تسجيل الدخول</h5>
             </div>
             <div class="modal-body">
             <form id="loginForm">
@@ -53,48 +54,54 @@
                 <div class="form-group">
                 <label for="password"></label>
             <input type="password" class="form-control" id="password" placeholder="كلمة المرور">
-            <div class="modal-footer justify-content-center">
-                <button onclick="validateLogin()" type="submit" class="btn btn-primary">تسجيل الدخول</button>
-            </div>
-                </div>
-                    <!-- <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="rememberMe">
-                        <script>
-                            var rememberMe = document.getElementById('rememberMe');
-                            function setRememberMe() {
-                                var username = document.getElementById('username').value;
-                                var password = document.getElementById('password').value;
-                                if (rememberMe.checked) { // if checked
-                                    localStorage.setItem('username', username);
-                                    localStorage.setItem('password', password);
+<div class="modal-footer justify-content-center">
 
-                                } else {
-                                    localStorage.removeItem('username');
-                                    localStorage.removeItem('password');
+        <!-- rememberMe -->
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <script>
+                                var rememberMe = document.getElementById('rememberMe');
+                                function setRememberMe() {
+                                    var username = document.getElementById('username').value;
+                                    var password = document.getElementById('password').value;
+                                    if (rememberMe.checked) { // if checked
+                                        localStorage.setItem('username', username);
+                                        localStorage.setItem('password', password);
+
+                                    } else {
+                                        localStorage.removeItem('username');
+                                        localStorage.removeItem('password');
+                                    }
                                 }
-                            }
-                        </script>
-                    <label class="form-check-label" for="rememberMe">تذكرني</label>
-                    </div> -->
-                        <!-- <script>
-                            var captcha = document.getElementById('captcha');
-                            captcha.onclick = function() {
-                                captcha.src = 'captcha.php?' + Math.random();
+                            </script>
+                        <label class="form-check-label" for="rememberMe">تذكرني</label>
+                    </div>
+
+        <!-- recaptcha -->
+               <script>
+                    var captcha = document.getElementById('captcha');
+                        captcha.onclick = function() {
+                        captcha.src = 'captcha.php?' + Math.random();
                             }
                         </script>
                         <div class="form-group">
                         <label for="captcha">
-                        <div class="g-recaptcha" data-sitekey="6L" data-callback="enableBtn"></div>
+                        <div class="g-recaptcha" data-sitekey="6Ldc5EgpAAAAAMxitcdz2a-4-4rz4sITj8hNRq4i" data-callback="enableBtn"></div>
                         </label>
                             </div>
-                            <script src="https://www.google.com/recaptcha/api.js?render=6L"></script>
+                            <script src="https://www.google.com/recaptcha/api.js?render=6Ldc5EgpAAAAAMxitcdz2a-4-4rz4sITj8hNRq4i"></script>
                             <script>
                                 function enableBtn() {
                                     document.getElementById("loginBtn").disabled = false;
                                 }
                             </script>
-                        
-                        <button onclick="validateLogin()" type="submit" id="loginBtn" class="btn btn-primary" disabled>تسجيل الدخول</button> -->
+                    
+
+                <button onclick="validateLogin()" type="submit" class="btn btn-primary">تسجيل الدخول</button>
+            
+            </div>
+                </div>
+                
 
             </form>
             </div>
