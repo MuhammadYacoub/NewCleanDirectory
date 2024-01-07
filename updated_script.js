@@ -1,8 +1,35 @@
 fetch("simpledata.json")
   .then((response) => response.json())
   .then((data) => {
-    populateTable(data);
-  })
+    populateCards(data);
+  }
+
+// Populate cards with data
+function populateCards(data) {
+  const cardContainer = document.getElementById("employeeCardContainer");
+  cardContainer.innerHTML = ""; // Clear existing content
+
+  data.forEach((employee) => {
+    const card = document.createElement("div");
+    card.className = "employee-card";
+    card.innerHTML = \`
+      <div class="card">
+        <img src="\${employee.photo}" alt="\${employee.name}" class="employee-photo">
+        <div class="card-body">
+          <h5 class="card-title">\${employee.name}</h5>
+          <p class="card-text">\${employee.grade}</p>
+          <p class="card-text">\${employee.department}</p>
+          <p class="card-text">\${employee.address}</p>
+          <p class="card-text">\${employee.phone}</p>
+          <p class="card-text">\${employee.id}</p>
+        </div>
+      </div>
+    \`;
+    cardContainer.appendChild(card);
+  });
+}
+
+)
   .catch((error) => console.error("Error fetching data:", error));
 
 // Populate table with data
@@ -38,7 +65,7 @@ function displaySelectedRow(employee) {
             <div class="row">
                 <!-- Employee Picture: This will be on the left in desktop view and top in mobile view -->
                 <div class="col-md-4 col-12">
-                <img id="employeePicture" src="Images/judgepic 6-3-2023/${employee.timerank}" alt="Picture place" class="fixed-size-image">
+                <img id="employeePicture" src="images/judgepic 6-3-2023/${employee.timerank}" alt="Picture place" class="fixed-size-image">
                 </div>
                 <!-- Employee Details: This will take the remaining space on the right in desktop view and be below the image in mobile view -->
                 <div class="col-md-8 col-12">
@@ -183,24 +210,3 @@ $('#loginModal').modal('hide');
   
 });
 
-
-// Assuming `data` is an array of employee objects fetched from `simpledata.json`
-function populateCards(data) {
-  const cardContainer = document.getElementById("employeeCardContainer");
-  cardContainer.innerHTML = ""; // Clear existing cards
-
-  data.forEach((employee) => {
-    const card = document.createElement("div");
-    card.className = "employee-card";
-    card.innerHTML = `
-      <img src="${employee.photo}" alt="${employee.name}" class="employee-photo">
-      <div class="employee-info">
-        <h2 class="employee-name">${employee.name}</h2>
-        <p class="employee-title">${employee.title}</p>
-        <p class="employee-email">${employee.email}</p>
-        <p class="employee-phone">${employee.phone}</p>
-      </div>
-    `;
-    cardContainer.appendChild(card);
-  });
-}

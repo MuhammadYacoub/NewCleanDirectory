@@ -89,4 +89,42 @@ margin-top: 60px;
 
             }
 
-           
+           /* new card */
+
+           .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+          }
+          
+          .employee-card {
+            width: 250px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #fff;
+          }
+          
+          .employee-photo {
+            width: 100%;
+            display: block;
+          }
+          
+          .employee-info {
+            padding: 15px;
+          }
+          
+          .employee-name {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+          }
+          
+          .employee-title,
+          .employee-email,
+          .employee-phone {
+            font-size: 14px;
+            color: #666;
+          }
+          
