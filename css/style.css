@@ -1,0 +1,92 @@
+            body, p, h1, h2, h3, h4, h5, h6 {
+                font-family: 'Alexandria', sans-serif;
+            }
+        
+            /* Default font size for larger devices */
+            body {
+                font-size: 12px;
+            }
+        
+            /* Smaller font size for tablets */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+                }
+                }
+        
+            /* Even smaller font size for mobile phones */
+        @media (max-width: 480px) {
+            body {
+                font-size: 12px;
+                };
+                }
+           
+        @media (max-width: 768px) {
+            .fixed-size-image {
+                width: 100%; /* Take full width */
+                height: auto; /* Adjust height automatically */
+            }
+            /* Add more styles as needed for text or other elements */
+            }
+            @media (max-width: 768px) {
+                .modal-dialog {
+    width: 100%;
+                }
+    
+            }
+
+            /* Example styles for the modal to look more like a card */
+            .modal-content {
+                background-color: #ffffff; 
+                border-radius: 15px; 
+                max-width: 100%;
+                height: auto; 
+                margin: auto;
+padding: 10px;
+                border: 1px solid rgb(168, 176, 244);
+                box-shadow: 0 0 10px rgb(168, 192, 244);
+margin-top: 60px;
+              }
+
+            .fixed-size-image {
+                max-width: 100%;
+                max-height: 300px;
+                object-fit: cover;
+                border-radius: 10px;
+                border: 1px solid rgb(168, 176, 244);
+                box-shadow: 0 0 10px rgb(168, 192, 244);
+            }
+
+            
+            /* .modal-dialog {
+                max-width: 75%;
+                height: auto;
+                margin: auto;
+                padding-top: 10%;
+            }  */
+
+           
+            .table-active {
+                height: 300px; overflow-y: auto;
+                border-radius: 15px;
+                border: 1px solid rgb(168, 176, 244);
+                box-shadow: 0 0 10px rgb(168, 192, 244);
+                padding: 10px;
+            }
+
+            .btn-primary {
+                border-radius: 15;
+                box-shadow: 0 0 10px rgb(168, 192, 244);
+                margin: 10px; 
+            }
+           
+            .logo {
+                max-width: 10%;
+                max-height: 10%;
+                margin-left: auto;
+                margin-right: auto;;
+                margin-top: -40px;
+
+            }
+
+           
