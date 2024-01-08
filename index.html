@@ -19,12 +19,10 @@
     <meta name="twitter:description" content="الموقع الرسمي لهيئة قضايا الدولة | The official site fot Egyptian Litigation Authority">
     <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/ar/1/1e/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D8%B6%D8%A7%D9%8A%D8%A7_%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A9.jpg">
     <!-- Add Google Fonts (Alexandria) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria" />   
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria" />    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -37,7 +35,7 @@
 <body>
 
 <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="logo d-flex justify-content-center ">
@@ -56,10 +54,10 @@
                     <div class="form-group">
                     <label for="password"></label>
                 <input type="password" class="form-control" id="password" placeholder="كلمة المرور">
-    <div class="modal-footer justify-content-center">
+    <div class="modal-footer justify-content-center"> 
 
             <!-- rememberMe -->
-                        <div class="form-group form-check">
+                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="rememberMe">
                                 <script>
                                     var rememberMe = document.getElementById('rememberMe');
@@ -77,10 +75,10 @@
                                     }
                                 </script>
                             <label class="form-check-label" for="rememberMe">تذكرني</label>
-                        </div>
+                        </div> 
 
             <!-- recaptcha -->
-                <script>
+                 <script>
                         var captcha = document.getElementById('captcha');
                             captcha.onclick = function() {
                             captcha.src = 'captcha.php?' + Math.random();
@@ -107,10 +105,9 @@
 
                 </form>
                 </div>
-            
             </div>
         </div>
-    </div>
+    </div> 
   
 <!-- card details modal -->
     <div class="modal fade bd-example-modal-lg" id="selectedRowModal" tabindex="-1" aria-labelledby="selectedRowModalLabel"    aria-hidden="true">
@@ -123,7 +120,7 @@
                     <!-- Content will be dynamically added here -->
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-secondary mb-2" onclick="saveToPhone()">حفظ جهة اتصال</button>
+                    <button type="button" class="btn btn-secondary" onclick="saveToPhone()">حفظ جهة اتصال</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
                 </div>
             </div>
@@ -132,11 +129,11 @@
 
 <!-- header -->
     <div class="header">
-        <img src="Images/headerold.jpg" alt="header" class="img-fluid" width="100%" height="auto" >
+        <img src="Images/headerold.jpg" alt="header" class="header" width="100%" height="auto" >
     </div>
     
 <!-- NAV -->
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs pt-2">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">دليل المستشارين</a>
         </li>
@@ -152,34 +149,21 @@
     </ul>    
 
 <!-- container -->
-<div class="container-fluid">
+    <div class="container mt-8">
         <h2 class="text-center mb-4" style="padding-top: 10px;" >دليل مستشاري هيئة قضايا الدولة</h2>
-        <input class="form-control mb-4" id="searchInput" type="text" placeholder="ابحث هنا..." onkeyup="filterTable()">
+        <input class="form-control mb-4" id="searchInput" type="text" placeholder="ابحث هنا..." onkeyup="filterCards()">
 
-
-        <div class="table-active">
-            <table class="table table-striped" id="myTableRow">
-                <thead>
-                    <tr class="table-primary" >
-                        <th>الاسم</th>
-                        <th>الدرجة</th>
-                        <th>الفرع</th>
-                        <th>العنوان</th>
-                        <th>رقم الهاتف</th>
-                        <th>رقم التعريف</th>
-                    </tr>
-                    <tr id="myTableRow"> 
-                        <p id="filteredRowCount">عدد النتائج: 0</p>
-                    </tr> 
-                    
-                </thead>
-                <tbody id="employeeDataBody">
-                    <!-- Data will be loaded here -->
-                </tbody>
-            </table>
-        </div>
-  
+        <tr id="myTableRow"> 
+            <p id="filteredRowCount">عدد النتائج: 0</p>
+        </tr> 
     </div>
+    <div id="employeeCardContainer" class="card-container">
+        <!-- Cards will be populated here by the JavaScript function -->
+    </div>
+
+        
+  
+  
 
 <script src="js/script.js"></script>
 </body>

@@ -1,122 +1,96 @@
+// Fetch the data from "simpledata.json"
 fetch("simpledata.json")
-  .then((response) => response.json())
-  .then((data) => {
-    populateTable(data);
+  .then(response => response.json())
+  .then(data => {
+    populateCards(data);
   })
-  .catch((error) => console.error("Error fetching data:", error));
+  .catch(error => console.error("Error fetching data:", error));
 
-// Populate table with data
-function populateTable(data) {
-  const tbody = document.getElementById("employeeDataBody");
-  data.forEach((employee) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-            <td>${employee.name}</a></td>
-            <td>${employee.grade}</td>
-            <td>${employee.branch}</td>
-            <td>${employee.address}</td>
-            <td>${employee.phone}</td>
-            <td>${employee.id}</td>
-        `;
-    row.addEventListener("click", () => displaySelectedRow(employee));
-    var a = row.count;
-    tbody.appendChild(row);
+// Define the populateCards function outside of the fetch then-clause
+function populateCards(data) {
+  const cardContainer = document.getElementById("employeeCardContainer");
+  cardContainer.innerHTML = ""; // Clear existing content
+
+  // Create cards for each employee and append to the container
+  data.forEach(employee => {
+    const card = document.createElement("div");
+    card.className = "employee-card";
+    card.innerHTML = `
+      <div class="card justify-content-center">
+        <img src="images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='images/logo PP.png';" class="card-img-top employee-photo mt-3 bt-3">
+        <div class="card-body mt-3">
+          <h6> المستشار/</h6>
+          <h5 class="card-title">${employee.name}</h5>
+          <p class="card-text lh-base">الدرجة : ${employee.grade}</p>
+          <!-- <p class="card-text lh-base"> الفرع : ${employee.branch}</p> -->
+        </div>
+        <button type="button" class="btn btn-secondary btn-sm">المزيد</button>
+        </div>
+    `;
+    cardContainer.appendChild(card);
+    card.onclick = () => displaySelectedRow(employee); // Attach click event to display modal
   });
 }
+
 // Function to display selected row in a modal
 function displaySelectedRow(employee) {
   const modalBody = document.getElementById("selectedRowModalBody");
-
-  // Clear existing content
-  modalBody.innerHTML = "";
-
-  // Add content to the modal body
-
-  const content = document.createElement("div");
-  content.innerHTML = 
-        `<div class="container">
-            <div class="row">
-                <!-- Employee Picture: This will be on the left in desktop view and top in mobile view -->
-                <div class="col-md-4 col-12">
-                <img id="employeePicture" src="Images/judgepic 6-3-2023/${employee.timerank}" alt="Picture place" class="fixed-size-image">
-                </div>
-                <!-- Employee Details: This will take the remaining space on the right in desktop view and be below the image in mobile view -->
-                <div class="col-md-8 col-12">
-                <h2 id="employeeName">${employee.name}</h2>
-                <p id="employeeDegree">  الدرجة : ${employee.grade}</p>
-                <hr>
-                <p id="employeeNumber">  رقم التعريف : ${employee.id}</p>
-                <p> الفرع : ${employee.branch}</p>
-                <div class="row">
-                    <div class="col-6">
-                    <p id="employeeAddress">  العنوان : ${employee.address}</p>
-                    </div>
-                    <div class="col-6">
-                    <p id="employeePhone">رقم الهاتف 0${employee.phone}</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>`;
-
-    // Add the content to the modal body
-  modalBody.appendChild(content);
-
+  // Clear existing content and add new content for selected employee
+  modalBody.innerHTML = `
+  <div class="container">
+  <div class="row">
+      <!-- Employee Picture: This will be on the left in desktop view and top in mobile view -->
+      <div class="col-md-4 col-12">
+      <img id="employeePicture" src="Images/judgepic 6-3-2023/${employee.timerank}" alt="Picture place" onerror="this.onerror=null;this.src='images/logo PP.png';" class="fixed-size-image">
+      </div>
+      <!-- Employee Details: This will take the remaining space on the right in desktop view and be below the image in mobile view -->
+      <div class="col-md-8 col-12">
+      <h2 id="employeeName">${employee.name}</h2>
+      <p id="employeeDegree">  الدرجة : ${employee.grade}</p>
+      <hr>
+      <p id="employeeNumber">  رقم التعريف : ${employee.id}</p>
+      <p> الفرع : ${employee.branch}</p>
+      <div class="row">
+          <div class="col-6">
+          <p id="employeeAddress">  العنوان : ${employee.address}</p>
+          </div>
+          <div class="col-6">
+          <p id="employeePhone">رقم الهاتف 0${employee.phone}</p>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+  `;
   // Show the modal
-  const modal = new bootstrap.Modal(
-    document.getElementById("selectedRowModal")
-  );
+  const modal = new bootstrap.Modal(document.getElementById("selectedRowModal"));
   modal.show();
 }
 
-function filterTable() {
-  var input,
-    filter,
-    table,
-    tr,
-    td,
-    i,
-    j,
-    txtValue,
-    found,
-    count = 0;
-  input = document.getElementById("searchInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("employeeDataBody");
-  tr = table.getElementsByTagName("tr");
+function filterCards() {
+  let input = document.getElementById("searchInput");
+  let filter = input.value.toUpperCase();
+  let cardContainer = document.getElementById("employeeCardContainer");
+  let cards = cardContainer.getElementsByClassName("employee-card");
+  let count = 0;
 
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td");
-    found = false;
-    for (j = 0; j < td.length; j++) {
-      if (td[j]) {
-        txtValue = td[j].textContent || td[j].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          found = true;
-          break; // Found a match in this row, no need to check further
-        }
-      }
-    }
-    if (found) {
-      tr[i].style.display = "";
-      count++; // Increment the count for a visible row
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i];
+    let textContent = card.textContent || card.innerText;
+    if (textContent.toUpperCase().indexOf(filter) > -1) {
+      card.style.display = ""; // Card matches the filter, display it
+      count++;
     } else {
-      tr[i].style.display = "none";
+      card.style.display = "none"; // Card does not match the filter, hide it
     }
   }
-
   // Update the count display
-  document.getElementById("filteredRowCount").innerText =
-    "عدد النتائج: " + count;
+  document.getElementById("filteredRowCount").innerText = "عدد النتائج: " + count;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Your JavaScript code here
-  var tableRow = document.getElementById("myTableRow");
-  var paragraphElement = tableRow.querySelector("p");
-  var newData = "New content for the paragraph";
-  paragraphElement.innerText = newData;
-});
+
+// Rest of existing functions and logic, ensure they are correctly referencing updated IDs and classes
+// ...
 
 function saveToPhone() {
   // Assume an employee object is available from the modal's context
@@ -183,24 +157,3 @@ $('#loginModal').modal('hide');
   
 });
 
-
-// Assuming `data` is an array of employee objects fetched from `simpledata.json`
-function populateCards(data) {
-  const cardContainer = document.getElementById("employeeCardContainer");
-  cardContainer.innerHTML = ""; // Clear existing cards
-
-  data.forEach((employee) => {
-    const card = document.createElement("div");
-    card.className = "employee-card";
-    card.innerHTML = `
-      <img src="${employee.photo}" alt="${employee.name}" class="employee-photo">
-      <div class="employee-info">
-        <h2 class="employee-name">${employee.name}</h2>
-        <p class="employee-title">${employee.title}</p>
-        <p class="employee-email">${employee.email}</p>
-        <p class="employee-phone">${employee.phone}</p>
-      </div>
-    `;
-    cardContainer.appendChild(card);
-  });
-}
