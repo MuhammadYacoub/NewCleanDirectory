@@ -19,12 +19,10 @@
     <meta name="twitter:description" content="الموقع الرسمي لهيئة قضايا الدولة | The official site fot Egyptian Litigation Authority">
     <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/ar/1/1e/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D8%B6%D8%A7%D9%8A%D8%A7_%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A9.jpg">
     <!-- Add Google Fonts (Alexandria) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria" />   
-     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria" />    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -130,32 +128,32 @@
         </div>
     </div>
 
-<!-- header -->
+
+
     <div class="header">
         <img src="Images/headerold.jpg" alt="header" class="img-fluid" width="100%" height="auto" >
     </div>
     
 <!-- NAV -->
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">دليل المستشارين</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="hcare.html">دليل الخدمات الطبية</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">دليل مقرات الهيئة</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">طلبات</a>
-        </li>
-    </ul>    
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">دليل المستشارين</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">دليل الخدمات الطبية</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">دليل مقرات الهيئة</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled">طلبات</a>
+            </li>
+        </ul>    
 
-<!-- container -->
     <div class="container mt-8">
         <h2 class="text-center mb-4" style="padding-top: 10px;" >دليل مستشاري هيئة قضايا الدولة</h2>
+        <h3 class="text-center mb-4" style="padding-top: 10px;" >الخدمات الطبية</h3>
         <input class="form-control mb-4" id="searchInput" type="text" placeholder="ابحث هنا..." onkeyup="filterTable()">
-
 
         <div class="table-active">
             <table class="table table-striped" id="myTableRow">
@@ -178,7 +176,7 @@
                 </tbody>
             </table>
         </div>
-  
+
     </div>
 
 <script src="js/script.js"></script>

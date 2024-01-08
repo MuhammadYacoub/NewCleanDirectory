@@ -170,7 +170,7 @@ validateLogin() ;
 		var password = document.getElementById('password').value;
 
 		// Example: Replace this with your authentication logic
-if (username === 'sla' && password === '18761876') {
+if (username === 'sla' && password === ' ') {
 			// Successful login, redirect to the next page
 $('#loginModal').modal('hide');
 		} else {
