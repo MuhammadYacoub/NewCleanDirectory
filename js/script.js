@@ -17,7 +17,7 @@ function populateCards(data) {
     card.className = "employee-card";
     card.innerHTML = `
       <div class="card justify-content-center">
-        <img src="images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='images/logo PP.png';" class="card-img-top employee-photo mt-3 bt-3">
+        <img src="Images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="card-img-top employee-photo mt-3 bt-3">
         <div class="card-body mt-3">
           <h6> المستشار/</h6>
           <h5 class="card-title">${employee.name}</h5>
