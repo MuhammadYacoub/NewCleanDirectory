@@ -41,7 +41,7 @@ function displaySelectedRow(employee) {
   <div class="row">
       <!-- Employee Picture: This will be on the left in desktop view and top in mobile view -->
       <div class="col-md-4 col-12">
-      <img id="employeePicture" src="Images/judgepic 6-3-2023/${employee.timerank}" alt="Picture place" onerror="this.onerror=null;this.src='images/logo PP.png';" class="fixed-size-image">
+      <img id="employeePicture" src="Images/judgepic 6-3-2023/${employee.timerank}" alt="Picture place" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="fixed-size-image">
       </div>
       <!-- Employee Details: This will take the remaining space on the right in desktop view and be below the image in mobile view -->
       <div class="col-md-8 col-12">
