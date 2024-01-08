@@ -11,7 +11,7 @@ function populateTable(data) {
   data.forEach((employee) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-            <td> <a href="#"> ${employee.name}</a></td>
+            <td>${employee.name}</a></td>
             <td>${employee.grade}</td>
             <td>${employee.branch}</td>
             <td>${employee.address}</td>
