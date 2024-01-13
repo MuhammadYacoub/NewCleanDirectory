@@ -21,10 +21,10 @@
     /* border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
     overflow: hidden;
-    width: 150px; /* Fixed width for the cards */
+width: 190px; /* Fixed width for the cards */
     margin-bottom: 20px;
     border: none !important;
-height: 340px !important;
+height: 330px !important;
   }
   
   /* Image styling */
@@ -37,9 +37,7 @@ height: 340px !important;
     background-color: rgb(219, 219, 219);
     border: #7b7b7b;
     margin: auto;
-    padding: auto;
-
-  }
+    padding-top: -90px;  }
   
   /* Card body styling */
   .card-body {

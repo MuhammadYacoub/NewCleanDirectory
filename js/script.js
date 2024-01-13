@@ -22,8 +22,8 @@ function populateCards(data) {
     }
     card.innerHTML = `
       <div class="card justify-content-center">
-        <img src="Images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="card-img-top employee-photo mt-3 bt-3">
-        <div class="card-body mt-3">
+<img src="Images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="card-img-top employee-photo">
+        <div class="card-body">
           <p> المستشار/</p>
           <h1 class="card-title">${employee.name}</h1>
           <hr>
@@ -153,7 +153,7 @@ validateLogin() ;
 		var password = document.getElementById('password').value;
 
 		// Example: Replace this with your authentication logic
-if (username === 'sla' && password === ' ') {
+if (username === 'sla' && password === '18761876') {
 			// Successful login, redirect to the next page
 $('#loginModal').modal('hide');
 		} else {
