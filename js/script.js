@@ -9,18 +9,24 @@ fetch("simpledata.json")
 // Define the populateCards function outside of the fetch then-clause
 function populateCards(data) {
   const cardContainer = document.getElementById("employeeCardContainer");
-  cardContainer.innerHTML = ""; // Clear existing content
+  cardContainer.innerHTML = ""; 
+  
+  // Clear existing content
 
   // Create cards for each employee and append to the container
-  data.forEach(employee => {
+  data.forEach((employee, index) => {
     const card = document.createElement("div");
     card.className = "employee-card";
+    if (index > 6) {
+      card.style.display = "none";
+    }
     card.innerHTML = `
       <div class="card justify-content-center">
         <img src="Images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="card-img-top employee-photo mt-3 bt-3">
         <div class="card-body mt-3">
-          <h6> المستشار/</h6>
-          <h5 class="card-title">${employee.name}</h5>
+          <p> المستشار/</p>
+          <h1 class="card-title">${employee.name}</h1>
+          <hr>
           <p class="card-text lh-base">الدرجة : ${employee.grade}</p>
           <!-- <p class="card-text lh-base"> الفرع : ${employee.branch}</p> -->
         </div>
@@ -29,8 +35,11 @@ function populateCards(data) {
     `;
     cardContainer.appendChild(card);
     card.onclick = () => displaySelectedRow(employee); // Attach click event to display modal
+    
   });
 }
+
+
 
 // Function to display selected row in a modal
 function displaySelectedRow(employee) {
@@ -50,11 +59,11 @@ function displaySelectedRow(employee) {
       <hr>
       <p id="employeeNumber">  رقم التعريف : ${employee.id}</p>
       <p> الفرع : ${employee.branch}</p>
-      <div class="row">
-          <div class="col-6">
+          <div class="row col-md-10">
+          <div class="d-block p-2 col-6">
           <p id="employeeAddress">  العنوان : ${employee.address}</p>
           </div>
-          <div class="col-6">
+          <div class=" d-block p-2 col-6">
           <p id="employeePhone">رقم الهاتف 0${employee.phone}</p>
           </div>
       </div>
@@ -156,4 +165,6 @@ $('#loginModal').modal('hide');
 ;
   
 });
+
+// showMore
 

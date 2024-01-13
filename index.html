@@ -133,11 +133,11 @@
     </div>
     
 <!-- NAV -->
-    <ul class="nav nav-tabs pt-2">
+    <ul class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">دليل المستشارين</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="hcare.html">دليل الخدمات الطبية</a>
         </li>
         <li class="nav-item">
@@ -145,13 +145,13 @@
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">طلبات</a>
-        </li>
+        </li> -->
     </ul>    
 
 <!-- container -->
     <div class="container mt-8">
-        <h2 class="text-center mb-4" style="padding-top: 10px;" >دليل مستشاري هيئة قضايا الدولة</h2>
-        <input class="form-control mb-4" id="searchInput" type="text" placeholder="ابحث هنا..." onkeyup="filterCards()">
+    <h2 class="text-center mb-4 bt-5" >دليل مستشاري هيئة قضايا الدولة</h2>
+        <input class="form-control mb-3" id="searchInput" type="text" placeholder="ابحث هنا..." onkeyup="filterCards()">
 
         <tr id="myTableRow"> 
             <p id="filteredRowCount">عدد النتائج: 0</p>
@@ -159,6 +159,12 @@
     </div>
     <div id="employeeCardContainer" class="card-container">
         <!-- Cards will be populated here by the JavaScript function -->
+    </div>
+<button class ="btn btn-primary btn-lg btn-block" onclick="showMore()" id="showMoreBtn">Show More</button>
+
+<!-- footer -->
+    <div class="footer">
+        <img src="Images/footer.jpg" alt="footer" class="footer" width="100%" height="auto" >
     </div>
 
         

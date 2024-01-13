@@ -1,3 +1,11 @@
+.body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;}
+
+
 /* Card container */
 #employeeCardContainer {
     display: flex;
@@ -13,10 +21,10 @@
     /* border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
     overflow: hidden;
-    width: 200px; /* Fixed width for the cards */
+    width: 150px; /* Fixed width for the cards */
     margin-bottom: 20px;
     border: none !important;
-height: 360px !important;
+height: 340px !important;
   }
   
   /* Image styling */
@@ -29,9 +37,7 @@ height: 360px !important;
     background-color: rgb(219, 219, 219);
     border: #7b7b7b;
     margin: auto;
-padding: 8px;
-  
-
+    padding: auto;
 
   }
   
@@ -43,7 +49,7 @@ padding: 8px;
   
   /* Title and text styling */
   .card-title {
-    font-size: 18px;
+font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
   }
@@ -56,7 +62,7 @@ padding: 8px;
 
   .card {
     justify-content: center !important;
-height: 350px !important;
+    height: 330px !important;
 
   }
 
@@ -80,6 +86,7 @@ margin-top: 60px;
     border-radius: 10px;
     border: 1px solid rgb(168, 176, 244);
     box-shadow: 0 0 10px rgb(168, 192, 244);
+padding-top: -30px;
 }
 
 @media (max-width: 768px) {
