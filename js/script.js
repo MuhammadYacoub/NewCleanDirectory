@@ -22,15 +22,14 @@ function populateCards(data) {
     }
     card.innerHTML = `
       <div class="card justify-content-center">
-<img src="Images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="card-img-top employee-photo">
-        <div class="card-body">
-          <p> المستشار/</p>
-          <h1 class="card-title">${employee.name}</h1>
-          <hr>
-          <p class="card-text lh-base">الدرجة : ${employee.grade}</p>
-          <!-- <p class="card-text lh-base"> الفرع : ${employee.branch}</p> -->
-        </div>
-        <button type="button" class="btn btn-secondary btn-sm">المزيد</button>
+        <img src="Images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="employee-photo">
+            <div class="card-body">
+            <h1 class="card-title">المستشار / <br> ${employee.name}</h1>
+            <hr>
+<p class="card-text "> ${employee.grade}</p>
+        <!-- <p class="card-text lh-base"> الفرع : ${employee.branch}</p> -->
+            </div>
+            <button class="btn btn-secondary btn-sm">المزيد</button>
         </div>
     `;
     cardContainer.appendChild(card);
@@ -58,8 +57,10 @@ function displaySelectedRow(employee) {
       <p id="employeeDegree">  الدرجة : ${employee.grade}</p>
       <hr>
       <p id="employeeNumber">  رقم التعريف : ${employee.id}</p>
-      <p> الفرع : ${employee.branch}</p>
-          <div class="row col-md-10">
+      <p> الفرع : ${employee.branch}</p> </div>
+      <div class="col-12">
+      <hr>
+  <div class="row col-md-12">
           <div class="d-block p-2 col-6">
           <p id="employeeAddress">  العنوان : ${employee.address}</p>
           </div>

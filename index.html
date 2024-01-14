@@ -19,7 +19,8 @@
     <meta name="twitter:description" content="الموقع الرسمي لهيئة قضايا الدولة | The official site fot Egyptian Litigation Authority">
     <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/ar/1/1e/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D8%B6%D8%A7%D9%8A%D8%A7_%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A9.jpg">
     <!-- Add Google Fonts (Alexandria) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria" />    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria" /> 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -30,9 +31,10 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://kit.fontawesome.com/2b6376a73c.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style="font-family: 'Alexandria', sans-serif;">
 
 <!-- Login Modal -->
      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -129,28 +131,37 @@
 
 <!-- header -->
     <div class="header">
-        <img src="Images/headerold.jpg" alt="header" class="header" width="100%" height="auto" >
+        <img src="Images/header.jpg" alt="header" class="header" width="100%" height="auto" >
     </div>
     
 <!-- NAV -->
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs bg-datk">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">دليل المستشارين</a>
+          <a class="nav-link active" aria-current="page" href="#">             <i class="fa-solid fa-users"></i>
+             دليل المستشارين</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="hcare.html">دليل الخدمات الطبية</a>
+          <a class="nav-link" href="hcare.html"> <i class="fa-solid fa-user-doctor"></i> دليل الخدمات الطبية</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">دليل مقرات الهيئة</a>
+          <a class="nav-link" href="#"> <i class="fa-solid fa-map-location-dot"></i> دليل مقرات الهيئة</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> <i class="fa-solid fa-graduation-cap"></i> البحث والتدريب</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> <i class="fa-solid fa-shop"></i> عروض تجارية</a>
+          </li>
         <li class="nav-item">
           <a class="nav-link disabled">طلبات</a>
         </li>
     </ul>    
 
+  
+
 <!-- container -->
     <div class="container mt-8">
-    <h2 class="text-center mb-4 bt-5" >دليل مستشاري هيئة قضايا الدولة</h2>
+<h2 class="text-center m-5 b-5" >دليل مستشاري هيئة قضايا الدولة</h2>
         <input class="form-control mb-3" id="searchInput" type="text" placeholder="ابحث هنا..." onkeyup="filterCards()">
 
         <tr id="myTableRow"> 
