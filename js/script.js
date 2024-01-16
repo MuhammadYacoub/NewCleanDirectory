@@ -56,7 +56,7 @@ function displaySelectedRow(employee) {
       <h2 id="employeeName">${employee.name}</h2>
       <p id="employeeDegree">  الدرجة : ${employee.grade}</p>
       <hr>
-      <p id="employeeNumber">  رقم التعريف : ${employee.id}</p>
+      <!-- <p id="employeeNumber">  رقم التعريف : ${employee.id}</p> -->
       <p> الفرع : ${employee.branch}</p> </div>
       <div class="col-12">
       <hr>
