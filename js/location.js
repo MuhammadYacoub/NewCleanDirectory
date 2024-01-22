@@ -1,5 +1,5 @@
-// Fetch the data from "simpledata.json"
-fetch("simpledata.json")
+// Fetch the data from "location.json"
+fetch("locations.json")
   .then(response => response.json())
   .then(data => {
     populateCards(data);
@@ -24,8 +24,7 @@ function populateCards(data) {
       <div class="card justify-content-center">
         <img src="Images/judgepic 6-3-2023/${employee.timerank}" alt="${employee.name}" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="employee-photo">
             <div class="card-body">
-            <h1 class="card-title">المستشار / <br> ${employee.name}</h1>
-
+            <h1 class="card-title">  ${employee.name}</h1>
             <hr>
 <p class="card-text "> ${employee.grade}</p>
         <!-- <p class="card-text lh-base"> الفرع : ${employee.branch}</p> -->
@@ -59,8 +58,6 @@ function displaySelectedRow(employee) {
       <hr>
       <!-- <p id="employeeNumber">  رقم التعريف : ${employee.id}</p> -->
       <p> الفرع : ${employee.branch}</p> </div>
-      <p class="card-text lh-base"> الأقدمية : ${employee.id}</p>
-
       <div class="col-12">
       <hr>
   <div class="row col-md-12">
@@ -81,6 +78,41 @@ function displaySelectedRow(employee) {
 }
 
 // Function to filter cards based on search input
+function displaySelectedRow(location) {
+  const modalBody = document.getElementById("selectedRowModalBody");
+  // Clear existing content and add new content for selected location
+  modalBody.innerHTML = `
+  <div class="container">
+  <div class="row">
+      <!-- Employee Picture: This will be on the left in desktop view and top in mobile view -->
+      <div class="col-md-4 col-12">
+    <img id="locationPicture" src="Images/judgepic 6-3-2023/${employee.timerank}" alt="Picture place" onerror="this.onerror=null;this.src='Images/logo PP.png';" class="fixed-size-image">
+      </div>
+      <!-- Employee Details: This will take the remaining space on the right in desktop view and be below the image in mobile view -->
+      <div class="col-md-8 col-12">
+  <h2 id="locationName">${employee.name}</h2>
+      <p id="locationDegree">  الدرجة : ${employee.grade}</p>
+      <hr>
+-- <p id="locationNumber">  رقم التعريف : ${employee.id}</p> -->
+      <p> الفرع : ${employee.branch}</p> </div>
+      <div class="col-12">
+      <hr>
+  <div class="row col-md-12">
+          <div class="d-block p-2 col-6">
+          <p id="locationAddress">  العنوان : ${employee.address}</p>
+          </div>
+          <div class=" d-block p-2 col-6">
+  <p id="locationPhone">رقم الهاتف 0${employee.phone}</p>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+  `;
+  // Show the modal
+  const modal = new bootstrap.Modal(document.getElementById("selectedRowModal"));
+  modal.show();
+}
 
 
 function filterCards() {

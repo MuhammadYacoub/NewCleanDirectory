@@ -126,26 +126,8 @@
   /* Add more styles as needed for text or other elements */
 }
 
+
 .filler{
-  background-color: #e0e0e3;
-  height: 400px;
-  padding: auto;
-  margin: auto;
-}
-
-.filler-text{
-margin: auto !important;
-padding-top: 100px;
-}
-
-.hccard {
-  width: 300px;
-  height: 150;
-  background-color: #d3d9e2;
-  box-shadow: #1e2228;
-  border: #333;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-  float: inline-start;
+  background-color: #8689b1;
+  height: max-content;
 }

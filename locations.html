@@ -22,16 +22,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200&family=Cairo:wght@500&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="js/script.js"></script>
+
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://kit.fontawesome.com/2b6376a73c.js" crossorigin="anonymous"></script>
 
 </head>
@@ -112,23 +113,6 @@
         </div>
     </div> 
   
-<!-- card details modal -->
-    <div class="modal fade bd-example-modal-lg" id="selectedRowModal" tabindex="-1" aria-labelledby="selectedRowModalLabel"    aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="selectedRowModalLabel">المستشار</h5>
-                </div>
-                <div class="modal-body" id="selectedRowModalBody" >
-                    <!-- Content will be dynamically added here -->
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-secondary" onclick="saveToPhone()">حفظ جهة اتصال</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 <!-- header -->
     <div class="header">
@@ -137,99 +121,72 @@
     
 <!-- NAV -->
 
-<nav class="navbar navbar-expand-lg ">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-users"></i>دليل المستشارين</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="hcare.html"><i class="fa-solid fa-user-doctor"></i> دليل الخدمات الطبية</a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="locations.html"><i class="fa-solid fa-map-location-dot"></i> دليل مقرات الهيئة</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="training.html"><i class="fa-solid fa-graduation-cap"></i> البحث والتدريب</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="commercial.html"><i class="fa-solid fa-shop"></i> عروض تجارية</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link disabled">طلبات</a>
-        </li>
-    </ul>
- 
+    <nav class="navbar navbar-expand-lg ">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-users"></i>دليل المستشارين</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="hcare.html"><i class="fa-solid fa-user-doctor"></i> دليل الخدمات الطبية</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link active" href="locations.html"><i class="fa-solid fa-map-location-dot"></i> دليل مقرات الهيئة</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="training.html"><i class="fa-solid fa-graduation-cap"></i> البحث والتدريب</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="commercial.html"><i class="fa-solid fa-shop"></i> عروض تجارية</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link disabled">طلبات</a>
+            </li>
+        </ul>
+     
 
-    <div class="col-md-3 ">
-        <a href="http://sla.gov.eg" class="btn btn-primary btn-danger">نسخة تجريبية </a>
-    </div>
+        <div class="col-md-3 ">
+            <a href="http://sla.gov.eg" class="btn btn-primary btn-danger">نسخة تجريبية </a>
+        </div>
 
-    <!-- Dark Mode Toggle Switch -->
-    <div class=" self-align-end form-check form-switch mx-4">
-        <input class="form-check-input" type="checkbox" id="darkModeToggle">
-        <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
-    </div>
+        <!-- Dark Mode Toggle Switch -->
+        <div class=" self-align-end form-check form-switch mx-4">
+            <input class="form-check-input" type="checkbox" id="darkModeToggle">
+            <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+        </div>
 
 
 
-</nav>
+    </nav>
 
 
 <!-- container -->
-    <div class="container ">
-        <h2 class="text-center m-3 mt-5" >دليل مستشاري هيئة قضايا الدولة</h2>
+    <div class="container">
+        <h2 class="text-center m-3 mt-5" >دليل مقرات 
+            <br>
+            <span class=" fs-4" >   هيئة قضايا الدولة  </span>
+        </h2>
     </div>
-    <div class=" container g-2 d-flex">
-        <input class="form-control m-auto" id="searchInput" type="text" placeholder="ابحث هنا..." onkeyup="filterCards()">
-        <tr class="col-auto" id="myTableRow d-flex justify-content-end "> 
-            <p class="m-5" id="filteredRowCount">عدد النتائج: 0</p>
-        </tr> 
-    </div>
-    <div id="employeeCardContainer" class="card-container">
-        <!-- Cards will be populated here by the JavaScript function -->
-    </div>
-    <!-- <div class="modal-footer justify-content-center">
-        <button class ="btn btn-secondary btn mx-auto mb-3" id="showMoreBtn">المزيد</button>
-    </div> -->
+    <hr>
+    <main>
+<!-- main  Section -->
+
+<div class="container text-align-end filler">
+    <h2 class="text-center m-3 mt-5 fs-2 filler-text text-danger" > الصفحة تحت الإنشاء 
+        <br>
+        <span class=" fs-4" >   جاري العمل  </span>
+    </h2>
+</div>
+<hr>
+
+    </main>
+
 <!-- footer -->
     <div class="footer "><img src="images/footer.jpg" alt="footer" class="footer" width="100%" height="auto" ></div>
 
 <script src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script>
 
-    // Dark Mode
-    document.addEventListener('DOMContentLoaded', function () {
-        const darkModeToggle = document.getElementById('darkModeToggle');
-
-        // Check if user already has a preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            darkModeToggle.checked = true;
-        } else if (localStorage.getItem('darkMode') === 'disabled') {
-            document.body.classList.remove('dark-mode');
-            darkModeToggle.checked = false;
-        } else {
-            // Set initial mode to light
-            document.body.classList.remove('dark-mode');
-            darkModeToggle.checked = false;
-        }
-
-        // Toggle function
-        darkModeToggle.addEventListener('change', function () {
-            if (darkModeToggle.checked) {
-                document.body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                document.body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-    });
-
-
-</script>
 
 
 

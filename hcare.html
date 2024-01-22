@@ -22,16 +22,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200&family=Cairo:wght@500&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="js/script.js"></script>
+
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://kit.fontawesome.com/2b6376a73c.js" crossorigin="anonymous"></script>
 
 </head>
@@ -137,60 +138,181 @@
     
 <!-- NAV -->
 
-<nav class="navbar navbar-expand-lg ">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-users"></i>دليل المستشارين</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="hcare.html"><i class="fa-solid fa-user-doctor"></i> دليل الخدمات الطبية</a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="locations.html"><i class="fa-solid fa-map-location-dot"></i> دليل مقرات الهيئة</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="training.html"><i class="fa-solid fa-graduation-cap"></i> البحث والتدريب</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="commercial.html"><i class="fa-solid fa-shop"></i> عروض تجارية</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link disabled">طلبات</a>
-        </li>
-    </ul>
- 
+    <nav class="navbar navbar-expand-lg ">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-users"></i>دليل المستشارين</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" href="hcare.html"><i class="fa-solid fa-user-doctor"></i> دليل الخدمات الطبية</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="locations.html"><i class="fa-solid fa-map-location-dot"></i> دليل مقرات الهيئة</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="training.html"><i class="fa-solid fa-graduation-cap"></i> البحث والتدريب</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="commercial.html"><i class="fa-solid fa-shop"></i> عروض تجارية</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link disabled">طلبات</a>
+            </li>
+        </ul>
+     
 
-    <div class="col-md-3 ">
-        <a href="http://sla.gov.eg" class="btn btn-primary btn-danger">نسخة تجريبية </a>
-    </div>
+        <div class="col-md-3 ">
+            <a href="http://sla.gov.eg" class="btn btn-primary btn-danger">نسخة تجريبية </a>
+        </div>
 
-    <!-- Dark Mode Toggle Switch -->
-    <div class=" self-align-end form-check form-switch mx-4">
-        <input class="form-check-input" type="checkbox" id="darkModeToggle">
-        <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
-    </div>
+        <!-- Dark Mode Toggle Switch -->
+        <div class=" self-align-end form-check form-switch mx-4">
+            <input class="form-check-input" type="checkbox" id="darkModeToggle">
+            <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+        </div>
 
 
 
-</nav>
+    </nav>
 
 
 <!-- container -->
     <div class="container ">
-        <h2 class="text-center m-3 mt-5" >دليل مستشاري هيئة قضايا الدولة</h2>
+        <h2 class="text-center m-3 mt-5" >دليل الخدمات الطبية 
+            <br>
+            <span class=" fs-4" >  لمستشاري هيئة قضايا الدولة  </span>
+        </h2>
     </div>
-    <div class=" container g-2 d-flex">
-        <input class="form-control m-auto" id="searchInput" type="text" placeholder="ابحث هنا..." onkeyup="filterCards()">
-        <tr class="col-auto" id="myTableRow d-flex justify-content-end "> 
-            <p class="m-5" id="filteredRowCount">عدد النتائج: 0</p>
-        </tr> 
+    <hr>
+    <main>
+        <!-- Filters Section -->
+<!-- Filters Section -->
+<div class="container" id="filters">
+    <div class="row">
+        <!-- Add filter options for governorate, specialty, and type -->
+        <div class="col mb-4">
+            <label class="my-2 fs-4" for="governorateFilter">المحافظة</label>
+            <select class="form-select" id="governorateFilter">
+                <!-- The "All" option is added by default -->
+            </select>
+        </div>
+        <div class="col mb-4">
+            <label class="my-2 fs-4" for="specialtyFilter">التخصص</label>
+            <select class="form-select" id="specialtyFilter">
+                <!-- The "All" option is added by default -->
+            </select>
+        </div>
+        <div class="col mb-4">
+            <label class="my-2 fs-4" for="typeFilter">نوع الجهة</label>
+            <select class="form-select" id="typeFilter">
+                <!-- The "All" option is added by default -->
+            </select>
+        </div>
     </div>
-    <div id="employeeCardContainer" class="card-container">
-        <!-- Cards will be populated here by the JavaScript function -->
+    <div class="col mb-4">
+        <button class="btn btn-outline-primary" onclick="filterResults()">البحث</button>
     </div>
-    <!-- <div class="modal-footer justify-content-center">
-        <button class ="btn btn-secondary btn mx-auto mb-3" id="showMoreBtn">المزيد</button>
-    </div> -->
+</div>
+
+<!-- Results Section -->
+<div class="container" id="results">
+    <!-- Display filtered results here -->
+</div>
+
+<script>
+    // Function to fetch JSON data
+    async function fetchData() {
+        const response = await fetch('hcaredata.json');
+        const data = await response.json();
+        return data;
+    }
+
+    // Function to filter and display results
+    async function filterResults() {
+        const healthcareData = await fetchData();
+
+        // Get selected values from filters
+        const selectedGovernorate = document.getElementById('governorateFilter').value;
+        const selectedSpecialty = document.getElementById('specialtyFilter').value;
+        const selectedType = document.getElementById('typeFilter').value;
+
+        // Filter the data based on selections
+        const filteredData = healthcareData.filter(item => {
+            return (
+                (selectedGovernorate === 'All' || item.government === selectedGovernorate) &&
+                (selectedSpecialty === 'All' || item.specialty === selectedSpecialty) &&
+                (selectedType === 'All' || item.type === selectedType)
+            );
+        });
+
+        // Display filtered results
+        displayResults(filteredData);
+    }
+
+    // Function to display results
+    function displayResults(data) {
+        const resultsContainer = document.getElementById('results');
+
+        // Clear previous results
+        resultsContainer.innerHTML = '';
+
+        // Loop through filtered data and create result elements
+        data.forEach(item => {
+            const resultElement = document.createElement('div');
+            // Customize the content based on your JSON structure
+            resultElement.innerHTML = `
+            <div class="hccard mb-5">
+                    <div class=" mb-4">
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-subtitle mb-2 fs-6 text-body-secondary">${item.specialty}</p>
+                        <!-- <p class="card-text fs-6">${item.type}</p> --> <hr> <p class="card-text">${item.government}</p>
+                        
+                    </div>
+            </div>
+
+               <!-- <p>${item.name}, ${item.government}, ${item.specialty}, ${item.type}
+                </p> --> `;
+            resultsContainer.appendChild(resultElement);
+        });
+    }
+
+    // Function to populate dropdown options
+    function populateDropdownOptions(data, property, dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        
+        // Get unique values for the specified property
+        const uniqueValues = [...new Set(data.map(item => item[property]))];
+
+        // Add "All" option by default
+        dropdown.innerHTML = '<option value="All">الجميع</option>';
+
+        // Add other options
+        uniqueValues.forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.textContent = value;
+            dropdown.appendChild(option);
+        });
+    }
+
+    // Add event listeners to your filter elements
+    // Call filterResults() when filters change
+    // Add event listeners code
+
+    // Initial data load and populate dropdown options
+    fetchData().then(data => {
+        populateDropdownOptions(data, 'government', 'governorateFilter');
+        populateDropdownOptions(data, 'specialty', 'specialtyFilter');
+        populateDropdownOptions(data, 'type', 'typeFilter');
+
+        // Initial data load
+        filterResults();
+    });
+</script>
+</main>
+
+
+
 <!-- footer -->
     <div class="footer "><img src="images/footer.jpg" alt="footer" class="footer" width="100%" height="auto" ></div>
 
