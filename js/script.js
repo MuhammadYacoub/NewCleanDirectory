@@ -27,7 +27,7 @@ function populateCards(data) {
             <h1 class="card-title">المستشار / <br> ${employee.name}</h1>
 
             <hr>
-<p class="card-text "> ${employee.grade}</p>
+             <p class="card-text "> ${employee.grade}</p>
         <!-- <p class="card-text lh-base"> الفرع : ${employee.branch}</p> -->
             </div>
             <button class="btn btn-secondary btn-sm">المزيد</button>
@@ -59,7 +59,7 @@ function displaySelectedRow(employee) {
       <hr>
       <!-- <p id="employeeNumber">  رقم التعريف : ${employee.id}</p> -->
       <p> الفرع : ${employee.branch}</p> </div>
-      <p class="card-text lh-base"> الأقدمية : ${employee.id}</p>
+      <!-- <p class="card-text lh-base"> الأقدمية : ${employee.id}</p> -->
 
       <div class="col-12">
       <hr>
