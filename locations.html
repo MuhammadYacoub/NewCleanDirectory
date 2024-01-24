@@ -171,10 +171,49 @@
 <!-- main  Section -->
 
 <div class="container text-align-end filler">
-    <h2 class="text-center m-3 mt-5 fs-2 filler-text text-danger" > الصفحة تحت الإنشاء 
-        <br>
-        <span class=" fs-4" >   جاري العمل  </span>
-    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Department ID</th>
+                <th>Department Name</th>
+                <th>Head of Department</th>
+                <th>Location</th>
+                <th>Contact Number</th>
+                <th>Email Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows dynamically using JavaScript -->
+        </tbody>
+    </table>
+    
+    <script>
+        // Sample data for demonstration
+        const departmentsData = [
+            { id: 1, name: 'Technical Inspection Department', head: 'Head of Tech Inspection', location: 'Main Building', contact: '123456789', email: 'techinspection@example.com' },
+            // Add more departments as needed
+        ];
+    
+        // Function to populate the Departments table
+        function populateDepartmentsTable() {
+            const tableBody = document.querySelector('tbody');
+            departmentsData.forEach(department => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${department.id}</td>
+                    <td>${department.name}</td>
+                    <td>${department.head}</td>
+                    <td>${department.location}</td>
+                    <td>${department.contact}</td>
+                    <td>${department.email}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+    
+        // Call the function to populate the table on page load
+        populateDepartmentsTable();
+    </script>
 </div>
 <hr>
 
