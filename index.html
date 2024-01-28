@@ -133,47 +133,60 @@
     </div>
 
 <!-- header -->
-    <div class="header">
-        <img src="Images/header.png" alt="header" class="header" width="100%" height="auto" >
+<div class="header">
+        <!-- <img src="Images/header.jpg" alt="header" class="header" width="100%" height="auto" > -->
+        <picture>
+            <!-- Desktop image -->
+        <source media="(min-width: 768px)" srcset="images/header.png" width="100%" height="auto" >
+    
+            <!-- Mobile image -->
+                  <img src="images/header.jpg" alt="Header Image" width="100%" height="auto">
+        </picture>
     </div>
     
 <!-- NAV -->
 
-<nav class="navbar navbar-expand-lg ">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-users"></i>دليل المستشارين</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="hcare.html"><i class="fa-solid fa-user-doctor"></i> دليل الخدمات الطبية</a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="locations.html"><i class="fa-solid fa-map-location-dot"></i> دليل مقرات الهيئة</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="training.html"><i class="fa-solid fa-graduation-cap"></i> البحث والتدريب</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="commercial.html"><i class="fa-solid fa-shop"></i> عروض تجارية</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link disabled">طلبات</a>
-        </li>
-    </ul>
- 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Your Brand</a> -->
 
-    <div class="col-md-3 ">
-        <a href="http://sla.gov.eg" class="btn btn-primary btn-danger">نسخة تجريبية </a>
+    <!-- Mobile toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html"><i class="fa-solid fa-users"></i>دليل المستشارين</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="hcare.html"><i class="fa-solid fa-user-doctor"></i> دليل الخدمات الطبية</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="locations.html"><i class="fa-solid fa-map-location-dot"></i> دليل مقرات الهيئة</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="training.html"><i class="fa-solid fa-graduation-cap"></i> البحث والتدريب</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="commercial.html"><i class="fa-solid fa-shop"></i> عروض تجارية</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled">طلبات</a>
+            </li>
+        </ul>
+        
+        <div class="col-md-3">
+            <a href="http://sla.gov.eg" class="btn btn-primary btn-danger">نسخة تجريبية</a>
+        </div>
+
+        <!-- Dark Mode Toggle Switch -->
+        <div class="self-align-end form-check form-switch mx-4">
+            <input class="form-check-input" type="checkbox" id="darkModeToggle">
+            <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+        </div>
     </div>
-
-    <!-- Dark Mode Toggle Switch -->
-    <div class=" self-align-end form-check form-switch mx-4">
-        <input class="form-check-input" type="checkbox" id="darkModeToggle">
-        <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
-    </div>
-
-
-
 </nav>
 
 

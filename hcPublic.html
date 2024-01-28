@@ -28,7 +28,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/script.js"></script>
+    <script src="js/scripthc.js"></script>
 
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -133,46 +133,19 @@
 
 <!-- header -->
     <div class="header">
-        <img src="Images/header.png" alt="header" class="header" width="100%" height="auto" >
+        <!-- <img src="Images/header.jpg" alt="header" class="header" width="100%" height="auto" > -->
+        <picture>
+            <!-- Desktop image -->
+        <source media="(min-width: 768px)" srcset="images/header.png" width="100%" height="auto" >
+
+            <!-- Mobile image -->
+                <img src="images/header.jpg" alt="Header Image" width="100%" height="auto">
+        </picture>
     </div>
     
 <!-- NAV -->
 
-    <nav class="navbar navbar-expand-lg ">
-        <!-- <ul class="nav justify-content-center">
-            <li class="nav-item">
-            <a class="nav-link mx-2" aria-current="page" href="index.html"><i class="fa-solid fa-users m-1"></i>دليل المستشارين</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link mx-2 active" href="hcare.html"><i class="fa-solid fa-user-doctor m-1"></i> دليل الخدمات الطبية</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="locations.html"><i class="fa-solid fa-map-location-dot m-1"></i> دليل مقرات الهيئة</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link mx-2" href="training.html"><i class="fa-solid fa-graduation-cap m-1"></i> البحث والتدريب</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link mx-2" href="commercial.html"><i class="fa-solid fa-shop m-1"></i> عروض تجارية</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link mx-2 disabled">طلبات</a>
-            </li>
-        </ul> -->
-     
-    <div class="container-fluid justify-content-end bg-secondary rounded p-2 mx-2 ">
-            <div class=" ">
-                <a href="http://sla.gov.eg" class="btn btn-primary btn-danger">نسخة تجريبية </a>
-            </div>
-
-            <div class=" self-align-end form-check form-switch mx-4">
-                <input class="form-check-input" type="checkbox" id="darkModeToggle">
-                <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
-            </div>
-        </div>
-
-
-    </nav>
+   
 
 
 <!-- container -->
