@@ -296,18 +296,17 @@
                 const resultElement = document.createElement('div');
                 // Customize the content based on your JSON structure
                 resultElement.innerHTML = `
-<div class="hccard card mb-5 mt-3" style="width: 18rem;" >
+                    <div class="hccard card mb-5 mt-3" style="width: 18rem;" >
                         <div class=" card-body mb-4">
                             <h3 class="card-title mb-2 fs-5 text-body-secondary">${item.name}</h3>
                             <p class=" mb-2 mx-3 fs-6 text-danger-emphasis">${item.specialty}</p>
                             <!-- <p class="card-text fs-6">${item.type}</p> --> <hr> <p class="card-text">${item.government}</p>
                             
                             <div class="card-footer bg-transparent border-0 d-flex justify-content-center ">
-<button class="button-70" role="button"  m-3" id="searchButton" onclick="searchOnGoogleMaps('${item.name}')">بحث عن الموقع</button>
+                                <button class="button-70" role="button"  m-3" id="searchButton" onclick="searchOnGoogleMaps('${item.name}')">بحث عن الموقع</button>
                             </div>
-                        </div>
-        
-                </div>
+                        </div>  
+                    </div>
 
                    <!-- <p>${item.name}, ${item.government}, ${item.specialty}, ${item.type}
                     </p> --> `;
