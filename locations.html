@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> قضايا الدولة | Egypt Litigation Authority</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> قضايا الدولة - مقرات | ELA</title>
     <meta name="description" content="قضايا الدولة هي هيئة قضائية مستقلة مصرية تتولى حماية المال العام ومصالح الدولة في الدعاوى المدنية والإدارية والدولية.">
     <meta name="keywords" content="هيئة,قضايا,الدولة,مصر,الحكومة وزارة,العدل">
     <link href="Images/favicon_io/favicon-16x16.png" rel="icon" type="image/x-icon">
@@ -112,46 +113,45 @@
             </div>
         </div>
     </div> 
-  
 
 <!-- header -->
-<div class="header">
-    <!-- <img src="Images/header.jpg" alt="header" class="header" width="100%" height="auto" > -->
-    <picture>
-        <!-- Desktop image -->
-    <source media="(min-width: 768px)" srcset="images/header.png" width="100%" height="auto" >
+    <div class="header">
+        <!-- <img src="Images/header.jpg" alt="header" class="header" width="100%" height="auto" > -->
+        <picture>
+            <!-- Desktop image -->
+        <source media="(min-width: 768px)" srcset="images/header.png" width="100%" height="auto" >
 
-        <!-- Mobile image -->
-              <img src="images/header.jpg" alt="Header Image" width="100%" height="auto">
-    </picture>
-</div>
+            <!-- Mobile image -->
+                <img src="images/header.jpg" alt="Header Image" width="100%" height="auto">
+        </picture>
+    </div>
     
 <!-- NAV -->
 
     <nav class="navbar navbar-expand-lg ">
-        <ul class="nav nav-tabs">
+        <ul class="nav justify-content-center">
             <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-users"></i>دليل المستشارين</a>
+            <a class="nav-link mx-2" aria-current="page" href="index.html"><i class="fa-solid fa-users m-1"></i>دليل المستشارين</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="hcare.html"><i class="fa-solid fa-user-doctor"></i> دليل الخدمات الطبية</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link active" href="locations.html"><i class="fa-solid fa-map-location-dot"></i> دليل مقرات الهيئة</a>
+            <a class="nav-link mx-2 " href="hcare.html"><i class="fa-solid fa-user-doctor m-1"></i> دليل الخدمات الطبية</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="training.html"><i class="fa-solid fa-graduation-cap"></i> البحث والتدريب</a>
+                <a class="nav-link mx-2 active" href="locations.html"><i class="fa-solid fa-map-location-dot m-1"></i> دليل مقرات الهيئة</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="commercial.html"><i class="fa-solid fa-shop"></i> عروض تجارية</a>
+            <a class="nav-link mx-2" href="training.html"><i class="fa-solid fa-graduation-cap m-1"></i> البحث والتدريب</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link disabled">طلبات</a>
+            <a class="nav-link mx-2" href="commercial.html"><i class="fa-solid fa-shop m-1"></i> عروض تجارية</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link mx-2 disabled">طلبات</a>
             </li>
         </ul>
      
 
-        <div class="col-md-3 ">
+        <div class=" ">
             <a href="http://sla.gov.eg" class="btn btn-primary btn-danger">نسخة تجريبية </a>
         </div>
 
@@ -167,61 +167,181 @@
 
 
 <!-- container -->
-<div class="container text-align-end filler">
-    <img src="images/تحديث البيانات copy.jpg" alt="" style="width: 100%;">
-</div>
+    <div class="container ">
+        <h2 class="text-center m-3 mt-5" >دليل  مقرات  الهيئة 
+            <br>
+            <span class=" fs-4" >   البحث عن قطاعات وافرع وأقسام الهيئة    </span>
+        </h2>
+    </div>
     <hr>
     <main>
-<!-- main  Section -->
+<!-- Filters Section -->
+    <div class="container" id="filters">
+        <div class="row">
+            <!-- Add filter options for governorate, specialty, and type -->
+            <div class="col mb-4">
+                <label class="my-2 fs-4" for="governorateFilter">القطاع</label>
+                <select class="form-select" id="governorateFilter">
+                    <!-- The "All" option is added by default -->
+                </select>
+            </div>
+            <div class="col mb-4">
+                <label class="my-2 fs-4" for="typeFilter"> الفرع</label>
+                <select class="form-select" id="typeFilter">
+                    <!-- The "All" option is added by default -->
+                </select>
+            </div>
+            <div class="col mb-4">
+                <label class="my-2 fs-4" for="specialtyFilter">القسم</label>
+                <select class="form-select" id="specialtyFilter">
+                    <!-- The "All" option is added by default -->
+                </select>
+            </div>
+            
+            
+        </div>
+        <div class="col mb-4">
+            <label class="my-2 fs-4" for="globalSearch">البحث العام</label>
+            <input type="text" class="form-control" id="globalSearch" placeholder=" ابحث هنا">
+        </div>
+        <div class="col mb-4">
+            <button class="btn btn-outline-primary" onclick="filterResults()">البحث</button>
+        </div>
+    </div>
 
-<div class="container text-align-end filler">
-    <table>
-        <thead>
-            <tr>
-                <th>Department ID</th>
-                <th>Department Name</th>
-                <th>Head of Department</th>
-                <th>Location</th>
-                <th>Contact Number</th>
-                <th>Email Address</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Add rows dynamically using JavaScript -->
-        </tbody>
-    </table>
-    
-    <script>
-        // Sample data for demonstration
-        const departmentsData = [
-            { id: 1, name: 'Technical Inspection Department', head: 'Head of Tech Inspection', location: 'Main Building', contact: '123456789', email: 'techinspection@example.com' },
-            // Add more departments as needed
-        ];
-    
-        // Function to populate the Departments table
-        function populateDepartmentsTable() {
-            const tableBody = document.querySelector('tbody');
-            departmentsData.forEach(department => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${department.id}</td>
-                    <td>${department.name}</td>
-                    <td>${department.head}</td>
-                    <td>${department.location}</td>
-                    <td>${department.contact}</td>
-                    <td>${department.email}</td>
-                `;
-                tableBody.appendChild(row);
+<!-- Results Section -->
+<div class="container" id="results">
+    <!-- Display filtered results here -->
+</div>
+
+
+<script>
+    // Function to fetch JSON data
+    async function fetchData() {
+        const response = await fetch('hcaredata.json');
+        const data = await response.json();
+        return data;
+    }
+
+    // Function to filter and display results
+    async function filterResults() {
+        const healthcareData = await fetchData();
+
+        // Get selected values from filters
+        const selectedGovernorate = document.getElementById('governorateFilter').value;
+        const selectedSpecialty = document.getElementById('specialtyFilter').value;
+        const selectedType = document.getElementById('typeFilter').value;
+        const globalSearchQuery = document.getElementById('globalSearch').value.toLowerCase();
+
+        // Disable specialty filter if the selected type is "المستشفيات"
+        const specialtyFilter = document.getElementById('specialtyFilter');
+        specialtyFilter.disabled = selectedType === 'المستشفيات';
+
+        // Filter the data based on selections and global search query
+        const filteredData = healthcareData.filter(item => {
+            return (
+                (selectedGovernorate === 'All' || item.government === selectedGovernorate) &&
+                (selectedSpecialty === 'All' || item.specialty === selectedSpecialty) &&
+                (selectedType === 'All' || item.type === selectedType) &&
+                (item.name.toLowerCase().includes(globalSearchQuery) ||
+                    item.government.toLowerCase().includes(globalSearchQuery) ||
+                    item.specialty.toLowerCase().includes(globalSearchQuery) ||
+                    item.type.toLowerCase().includes(globalSearchQuery))
+            );
+        });
+
+           // Display filtered results
+           displayResults(filteredData);
+    }
+
+
+    // Function to display results
+    function displayResults(data) {
+        const resultsContainer = document.getElementById('results');
+
+        // Clear previous results
+        resultsContainer.innerHTML = '';
+
+        if (data.length === 0) {
+            // Display a message when there are no results
+    const noResultsMessage = document.createElement('div');
+    noResultsMessage.innerHTML = 
+    ` <div class="alert alert-danger" role="alert"> عذرا | لا يوجد نتائج   !</div> `;
+            resultsContainer.appendChild(noResultsMessage);
+        } else {
+            // Loop through filtered data and create result elements
+            data.forEach(item => {
+                const resultElement = document.createElement('div');
+                // Customize the content based on your JSON structure
+                resultElement.innerHTML = `
+                <div class="hccard mb-5">
+                    <div class=" mb-4">
+                        <h3 class="card-title mb-2 fs-5 text-body-secondary">${item.name}</h3>
+                        <p class=" mb-2 mx-3 fs-6 text-danger-emphasis">${item.specialty}</p>
+
+                        <!-- <p class="card-text fs-6">${item.type}</p> --> <hr> <p class="card-text">${item.government}</p>    
+                    </div>
+                </div>
+
+                   <!-- <p>${item.name}, ${item.government}, ${item.specialty}, ${item.type}
+                    </p> --> `;
+                resultsContainer.appendChild(resultElement);
             });
         }
-    
-        // Call the function to populate the table on page load
-        populateDepartmentsTable();
-    </script>
-</div>
-<hr>
+    }
 
-    </main>
+    // Function to populate dropdown options
+    function populateDropdownOptions(data, property, dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+
+        // Get unique values for the specified property
+        const uniqueValues = [...new Set(data.map(item => item[property]))];
+
+        // Add "All" option by default
+        dropdown.innerHTML = '<option value="All">الجميع</option>';
+
+        // Add other options
+        uniqueValues.forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.textContent = value;
+            dropdown.appendChild(option);
+        });
+    }
+
+    // Add event listeners to your filter elements
+    // Call filterResults() when filters change
+    document.getElementById('governorateFilter').addEventListener('change', filterResults);
+    document.getElementById('specialtyFilter').addEventListener('change', filterResults);
+    document.getElementById('typeFilter').addEventListener('change', filterResults);
+
+    // Initial data load and populate dropdown options
+    fetchData().then(data => {
+        populateDropdownOptions(data, 'government', 'governorateFilter');
+        populateDropdownOptions(data, 'specialty', 'specialtyFilter');
+        populateDropdownOptions(data, 'type', 'typeFilter');
+
+        // Initial data load
+        filterResults();
+    });
+
+
+     // Initial data load and populate dropdown options
+     fetchData().then(data => {
+        populateDropdownOptions(data, 'government', 'governorateFilter');
+        populateDropdownOptions(data, 'specialty', 'specialtyFilter');
+        populateDropdownOptions(data, 'type', 'typeFilter');
+
+        // Initial data load
+        filterResults();
+    });
+</script>
+
+<!-- ... (your existing HTML code) ... -->
+
+</main>
+
+
 
 <!-- footer -->
     <div class="footer "><img src="images/footer.jpg" alt="footer" class="footer" width="100%" height="auto" ></div>
@@ -229,7 +349,46 @@
 <script src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script>
 
+    // Dark Mode
+    document.addEventListener('DOMContentLoaded', function () {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+        // Check if user already has a preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        } else if (localStorage.getItem('darkMode') === 'disabled') {
+            document.body.classList.remove('dark-mode');
+            darkModeToggle.checked = false;
+        } else {
+            // Set initial mode to light
+            document.body.classList.remove('dark-mode');
+            darkModeToggle.checked = false;
+        }
+
+        // Toggle function
+        darkModeToggle.addEventListener('change', function () {
+            if (darkModeToggle.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    });
+
+
+    // Search on Google Maps
+    function searchOnGoogleMaps(query) {
+        window.open(`https://www.google.com/maps/search/${query}`, '_blank');
+    }
+
+    
+
+</script>
 
 
 
