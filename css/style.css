@@ -26,15 +26,15 @@
 /* Style for each employee card */
 .employee-card {
   padding-top: 70px;
-  min-width: 190px; /* Fixed width for the cards */
-  background-color: #c9d5e6;
+  min-width: 250px; /* Fixed width for the cards */
+  background-color: #7ea1c3;
   border-radius: 15px;
   /* padding: 8px; */
   /* background-color: rgb(225, 225, 225);
       border-radius: 15px;
       height: 150px !important;
           margin-top: 10px;*/
-  max-width: 190px; /* Fixed width for the cards */
+  max-width: 250px; /* Fixed width for the cards */
   /* margin-bottom: 20px; */
   /* padding-top: 59px; */
   /* background: #ffffff; */
@@ -47,8 +47,8 @@
 
 /* Image styling */
 .employee-photo {
-  width: 110px;
-  height: 110px; /* Fixed height for the images */
+  width: 120px;
+  height: 120px; /* Fixed height for the images */
   object-fit: cover; /*Ensures the image covers the area nicely*/
   object-position: center; /* Centers the image */
   border-radius: 50%;
@@ -151,3 +151,105 @@ padding-top: 100px;
 
 
 .button-70 {   background-image: linear-gradient(#0dccea, #0d70ea);   border: 0;   border-radius: 4px;   box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;   box-sizing: border-box;   color: #fff;   cursor: pointer;   font-family: Montserrat,sans-serif;   font-size: .9em;   margin: 5px;   padding: 10px 15px;   text-align: center;   user-select: none;   -webkit-user-select: none;   touch-action: manipulation; }
+
+
+nav{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fefdfd;
+  box-shadow:  3px 3px 5px  rgba(0, 0, 0, 0.1);
+  
+}
+
+nav ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content:flex-start ;
+  align-items: center;
+}
+
+nav li{
+  height: 50px;
+
+}
+
+nav a{
+  height: 100%;
+  padding: 0 30px ;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  color: #000;
+
+}
+
+nav a:hover{
+  color: #4f76c4;
+}
+
+/* nav li:first-child{
+
+} */
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: #fefdfd1b;
+  backdrop-filter: blur(10px);
+  box-shadow: #000 0px 0px 10px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar li{
+  width: 100%;
+}
+
+.sidebar a{
+  width: 100%;
+}
+
+.menu-button{
+display: none;
+}
+
+
+@media  (max-width: 800px){
+  .hideOnMobile{
+      display: none;
+}
+  .menu-button{
+      display: block;
+  }
+}
+
+@media  (max-width: 440px){
+  .sidebar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  }
+
+  .sidebar li{
+  width: 100%;
+  }
+
+  .sidebar a{
+  width: 100%;
+  padding: 0 10px;
+  }
+
+}
+
